@@ -1,0 +1,24 @@
+#+title: FUNCompiler Tree Sitter Parser
+#+author: Lens
+#+description: A parser for the language FUNCompiler compiles based on tree sitter.
+#+created: <2022-12-03 Sat>
+
+** Dependencies
+
+- A C compiler (we like [[https://gcc.gnu.org/][GCC]])
+- [[https://nodejs.org/en/][Node.js]] (sorry)
+
+** How to Build
+
+#+begin_src sh
+  npm install
+  npx tree-sitter generate
+  cmake -B bld
+  cmake --build bld
+#+end_src
+
+This will compile and link a shared library ~tree-sitter-un~ into the
+=bld= subdirectory. It is recommended to copied into =~/.tree_sitter/bin=.
+This shared library could also be add the =bld= path into ~parser-directories~
+in =~/tree-sitter/config.json=.
+

@@ -1,0 +1,17 @@
+{
+  "name": "tree-sitter-lite-lisp",
+  "version": "1.0.0",
+  "description": "A tree-sitter grammar for LITE LISP, a language built into and made for configuring LITE, a text editor.",
+  "main": "grammar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tree-sitter"
+  ],
+  "author": "Lens_r",
+  "license": "MIT",
+  "dependencies": {
+    "tree-sitter-cli": "^0.20.7"
+  }
+}
