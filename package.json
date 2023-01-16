@@ -13,5 +13,13 @@
   "license": "MIT",
   "dependencies": {
     "tree-sitter-cli": "^0.20.7"
-  }
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.lite_lisp",
+      "file-types": [
+        "lt"
+      ]
+    }
+  ]
 }

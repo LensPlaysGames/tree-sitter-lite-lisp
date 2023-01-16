@@ -1,50 +1,55 @@
 module.exports = grammar({
-    name: "un",
+    name: "lite_lisp",
 
     rules: {
-        source_file: $ => repeat($.s_expr),
-        s_expr: $ => choice(
+        source_file: $ => repeat($._s_expr),
+        _s_expr: $ => choice(
             $.quasiquote,
             $.unquote_splicing,
             $.unquote,
             $.quote,
             $.improper_list,
             $.list,
-            $._atom_literal
+            $._atom_literal,
+            $.comment
         ),
+        comment: $ => /;+.*/,
         quasiquote: $ => seq(
             "`",
-            $.s_expr
+            $._s_expr
         ),
         unquote_splicing: $ => seq(
             ",@",
-            $.s_expr
+            $._s_expr
         ),
         unquote: $ => seq(
             ",",
-            $.s_expr
+            $._s_expr
         ),
         quote: $ => seq(
             "'",
-            $.s_expr
+            $._s_expr
         ),
         list: $ => seq(
             "(",
-            repeat($.s_expr),
+            repeat($._s_expr),
             ")"
         ),
         improper_list: $ => seq(
             "(",
-            repeat1($.s_expr),
+            repeat1($._s_expr),
             ".",
-            $.s_expr,
+            $._s_expr,
             ")"
         ),
         _atom_literal: $ => choice(
             $.string,
+            $.symbol,
             $.number
         ),
+        // TODO: Multiline strings are going to require a custom scanner.
         string: $ => /".*[^\\]?"/,
+        symbol: $ => /[a-zA-Z#\*\+\.<>\!\$@:\-&\^_]+/,
         number: $ => /[0-9]+/
     }
 });
