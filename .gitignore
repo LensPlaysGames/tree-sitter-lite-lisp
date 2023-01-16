@@ -1,6 +1,8 @@
 binding.gyp
 bindings/
+bld/
 Cargo.toml
 node_modules/
 package-lock.json
+parser.*
 src/
