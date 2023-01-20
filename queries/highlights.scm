@@ -2,10 +2,20 @@
 
 (comment) @comment
 
-(symbol) @variable
+;(symbol) @variable
 
 (string) @string
 (number) @number
+
+[ "if"
+  "when"
+  "unless"
+  "define"
+  "set"
+  "let"
+  "defun"
+  "defmacro"
+  "macro" ] @keyword
 
 [ "'" "`" "," ",@" ] @operator
 
