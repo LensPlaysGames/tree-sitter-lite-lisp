@@ -4,5 +4,7 @@ bld/
 Cargo.toml
 node_modules/
 package-lock.json
-parser.*
-src/
+parser.exp
+parser.lib
+parser.o*
+scanner.o*
