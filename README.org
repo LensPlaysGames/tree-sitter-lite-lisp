@@ -1,6 +1,6 @@
-#+title: FUNCompiler Tree Sitter Parser
+#+title: LITE LISP Tree Sitter Parser
 #+author: Lens
-#+description: A parser for the language FUNCompiler compiles based on tree sitter.
+#+description: A parser for LITE LISP, the language to configure the LITE text editor.
 #+created: <2022-12-03 Sat>
 
 ** Dependencies
@@ -17,8 +17,8 @@
   cmake --build bld
 #+end_src
 
-This will compile and link a shared library ~tree-sitter-un~ into the
-=bld= subdirectory. It is recommended to copied into =~/.tree_sitter/bin=.
-This shared library could also be add the =bld= path into ~parser-directories~
-in =~/tree-sitter/config.json=.
+This will compile and link a shared library ~tree-sitter-lite_lisp~ into the
+=bld= subdirectory. It is recommended to copy it into =~/.tree_sitter/bin=.
+This shared library could also be used by adding the =bld= path into
+~parser-directories~ in =~/tree-sitter/config.json=.
 
